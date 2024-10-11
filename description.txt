@@ -1,0 +1,40 @@
+CSC 249 Project 2 
+Due October 11 2024
+Zoe Plumridge 
+
+A text (.txt or .md) document with a written description of your client-VPN message format 
+(that is, a description of all implemented client and VPN messages, 
+and how the various components of each message are represented). 
+Your goal in writing this document should be to convey enough information 
+in enough detail to allow a competent programmer 
+without access to your source code 
+to write either a new client that communicates properly with your VPN server, 
+or a new VPN server that communicates properly with your client. 
+This document should include at least six sections: 
+Overview of Application, 
+Client->VPN Server Message Format, 
+VPN Server->Client Message Format, 
+Example Output, 
+a description of how the network layers are interacting when you run your server, 
+VPN server, 
+and client, 
+and Acknowledgments.
+
+Instructions for operation / what happens
+1. Run each of client, VPN, server
+2. Client says: Enter target message: 
+Target message is a string. Prefered format is "integer" "message", 
+but if no integer is provided, or if the integer is 20 or greater, the program defaults to 5. 
+Client adds the information of the target server to the beginning of the message. 
+Client sends this to VPN.
+
+VPN splits information into server IP, server host, and message. 
+VPN then forwards the information to the server while continuing to maintain a connection with the client. 
+
+Server receives information, processes, sends back to VPN. 
+
+VPN receives information from server, forwards to client.
+
+Client receives information. Closes connections. 
+
+Application repeats "integer" number of times the message converted to all capital letters. 
