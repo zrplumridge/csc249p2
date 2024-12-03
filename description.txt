@@ -1,6 +1,9 @@
 CSC 249 Project 2 
 Due October 11 2024
+Resubmitted 
 Zoe Plumridge 
+
+Acknowledgements: Worked through problem with Vivian Streber. 
 
 A text (.txt or .md) document with a written description of your client-VPN message format 
 (that is, a description of all implemented client and VPN messages, 
@@ -18,7 +21,6 @@ Example Output,
 a description of how the network layers are interacting when you run your server, 
 VPN server, 
 and client, 
-and Acknowledgments.
 
 Instructions for operation / what happens
 1. Run each of client, VPN, server
