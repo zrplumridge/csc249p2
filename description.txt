@@ -29,7 +29,7 @@ Target message is a string. Prefered format is "integer" "message",
 but if no integer is provided, or if the integer is 20 or greater, the program defaults to 5. This occurs in the application layer of the client.
 *5 hello*
 
-Client adds the information of the target server (IP and port) to the beginning of the message. This occurs in the internetwork layer. 
+Client adds the information of the target server (IP and port) to the beginning of the message. Format: "message = [SERVER_IP, str(SERVER_PORT), message]" (SERVER_IP is already a string) This occurs in the internetwork layer. 
 Client sends this to VPN via a data link between the link layer of the client and of the VPN. 
 
 VPN splits information into server IP, server host, and message as part of the network layer. 
