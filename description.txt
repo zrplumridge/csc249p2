@@ -1,6 +1,6 @@
 CSC 249 Project 2 
 Due October 11 2024
-Resubmitted 
+Resubmitted December 13 2024
 Zoe Plumridge 
 
 Acknowledgements: Worked through problem with Vivian Streber. 
@@ -23,20 +23,24 @@ VPN server,
 and client, 
 
 Instructions for operation / what happens
-1. Run each of client, VPN, server
-2. Client says: Enter target message: 
+1. Run each of server, VPN, client in terminal
+2. Client says: "Enter target message: "
 Target message is a string. Prefered format is "integer" "message", 
-but if no integer is provided, or if the integer is 20 or greater, the program defaults to 5. 
-Client adds the information of the target server to the beginning of the message. 
-Client sends this to VPN.
+but if no integer is provided, or if the integer is 20 or greater, the program defaults to 5. This occurs in the application layer of the client.
+*5 hello*
 
-VPN splits information into server IP, server host, and message. 
-VPN then forwards the information to the server while continuing to maintain a connection with the client. 
+Client adds the information of the target server (IP and port) to the beginning of the message. This occurs in the internetwork layer. 
+Client sends this to VPN via a data link between the link layer of the client and of the VPN. 
 
-Server receives information, processes, sends back to VPN. 
+VPN splits information into server IP, server host, and message as part of the network layer. 
+VPN then forwards the information to the server while continuing to maintain a connection with the client through the link layer. 
+VPN does not process information at the transport or application layers, thus preserving the client's information accuracy and privacy. 
 
-VPN receives information from server, forwards to client.
+Server receives information at the link layer, processes at network, transportation, and application layers, then again at transportation and network layers before the link layer sends information back to VPN. 
+Result of processing: *hello hello hello hello hello*
 
-Client receives information. Closes connections. 
+VPN receives information from server at link layer, modifies at network layer to change target address, and link layer forwards to client's link layer.
+
+Client receives information at link layer. Information processed at network and transport layer before results printed at application layer. Closes connection with VPN. VPN closes connection with server. 
 
 Application repeats "integer" number of times the message converted to all capital letters. 
